@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_id_animales_lista"
+        android:layout_gravity="center_horizontal"
+        style="@style/TextView_Lista" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_especie_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_raza_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_edad_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_peso_animales_lista"
+        android:layout_gravity="right" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_sexo_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_proposito_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_etapaProductiva_animales_lista"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_dieta_animales_lista"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

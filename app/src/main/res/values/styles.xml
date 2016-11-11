@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextView_Titulos">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textColor">#0D184F</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="TextView_nomal">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">#0D184F</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="TextView_Lista">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+   <style name="button">
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">#3399FF</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="editText_matchParent" parent="@android:style/Widget.EditText">
+        <item name="android:textColorHint">#FFA7A7A7</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

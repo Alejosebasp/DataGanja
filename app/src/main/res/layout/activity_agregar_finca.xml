@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vistas.AgregarFinca"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_finca"
+            android:id="@+id/textView2"
+            style="@style/TextView_nomal"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            style="@style/editText_matchParent"
+            android:inputType="textPersonName"
+            android:id="@+id/ET_nombre_propietario"
+            android:hint="@string/nombre_propietario"
+             />
+
+        <EditText
+            android:id="@+id/ET_nombre_finca"
+            android:hint="@string/nombre_finca"
+            style="@style/editText_matchParent" />
+
+        <EditText
+            android:id="@+id/ET_tamaño"
+            android:hint="@string/num_hectareas"
+            style="@style/editText_matchParent"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/ET_num_trabajadores"
+            style="@style/editText_matchParent"
+            android:hint="@string/numero_trabajadores" />
+
+        <EditText
+            android:inputType="textPostalAddress"
+            android:id="@+id/ET_ubicacion"
+            android:hint="@string/ubicacion"
+            style="@style/editText_matchParent" />
+
+        <TableLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tipo_produccion"
+                android:id="@+id/TV_tipo_produccion"
+                style="@style/TextView_Titulos" />
+
+        </TableLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/RG_tipo_produccion">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tipo_pecuario"
+                    android:id="@+id/RB_tipo_pecuario"
+                    android:checked="false"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tipo_agricola"
+                    android:id="@+id/RB_tipo_agricola"
+                    android:checked="false"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ripo_agropecuario"
+                    android:id="@+id/RB_tipo_agropecuario"
+                    android:checked="false"
+                    android:layout_margin="5dp" />
+            </RadioGroup>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/añadir_finca"
+                android:id="@+id/BT_agregar_finca"
+                style="@style/button"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

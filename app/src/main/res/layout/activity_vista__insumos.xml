@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.alejosebasp.dataganja.vistas.Vista_Otros"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSUMOS"
+        android:id="@+id/TV_insumos"
+        style="@style/TextView_Titulos"
+        android:layout_marginTop="10dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LV_insumos_vista"
+        android:layout_weight="1"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar_insumo"
+        android:id="@+id/BT_agregar_insumo_vista"
+        style="@style/button"/>
+
+</LinearLayout>

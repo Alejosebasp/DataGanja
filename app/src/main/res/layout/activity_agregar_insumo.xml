@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".vistas.Agregar_Insumo"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/ET_tipo_insumo"
+            android:layout_gravity="right"
+            style="@style/editText_matchParent"
+            android:hint="@string/tipo_insumo" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/ET_nombre_insumo"
+            android:layout_gravity="center_horizontal"
+            style="@style/editText_matchParent"
+            android:hint="@string/nombre_insumo" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/ET_cantidad_insumo"
+            android:layout_gravity="center_horizontal"
+            style="@style/editText_matchParent"
+            android:hint="@string/cantidad" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ET_id_insumo"
+            android:layout_gravity="center_horizontal"
+            style="@style/editText_matchParent"
+            android:hint="@string/id_insumo" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/agregar_insumo"
+            android:id="@+id/BT_agregar_insumo"
+            style="@style/button" />
+    </LinearLayout>
+</ScrollView>

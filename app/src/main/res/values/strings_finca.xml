@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_finca">Por favor ingrese los siguientes datos para registrar la finca</string>
+    <string name="nombre_propietario">Nombre Propietario</string>
+    <string name="nombre_finca">Nombre de la finca</string>
+    <string name="num_hectareas">Tamaño (hectareas)</string>
+    <string name="tipo_produccion">Tipo de producción</string>
+    <string name="tipo_pecuario">Pecuario</string>
+    <string name="tipo_agricola">Agricola</string>
+    <string name="ripo_agropecuario">Agropecuario</string>
+    <string name="numero_trabajadores">Numero trabajadores</string>
+    <string name="ubicacion">Ubicación</string>
+</resources>

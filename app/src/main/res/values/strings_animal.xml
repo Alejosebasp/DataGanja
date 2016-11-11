@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_animal">Por favor ingrese los  siguientes datos para registar el animal</string>
+    <string name="boton_agregar_animal">Agregar Animal</string>
+    <string name="id">Id o numero del animal</string>
+    <string name="raza">Raza</string>
+    <string name="especie">Especie</string>
+    <string name="peso">Peso</string>
+    <string name="edad">Edad(meses)</string>
+    <string name="sexo">Sexo</string>
+    <string name="sexo_macho">Macho</string>
+    <string name="sexo_hembra">Hembra</string>
+    <string name="proposito">Proposito</string>
+    <string name="dieta">Dieta</string>
+    <string name="etapa_productiva">Etapa productiva</string>
+
+</resources>

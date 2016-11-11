@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="propietario">Propietario</string>
+    <string name="tamaño">Tamaño</string>
+    <string name="ubicada_en">Ubicada en: </string>
+    <string name="ver_inventario">Ver inventario</string>
+    <string name="ingresos">Ver ingresos</string>
+    <string name="gastos">Ver gastos</string>
+    
+</resources>

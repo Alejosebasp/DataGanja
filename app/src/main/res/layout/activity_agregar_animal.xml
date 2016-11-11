@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".vistas.Agregar_Animal"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_animal"
+                android:id="@+id/textView"
+                style="@style/TextView_nomal"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="number"
+                style="@style/editText_matchParent"
+                android:hint="@string/id"
+                android:id="@+id/ET_id_animal" />
+
+            <EditText
+                android:id="@+id/ET_especie_animal"
+                style="@style/editText_matchParent"
+                android:hint="@string/especie" />
+
+            <EditText
+                android:id="@+id/ET_raza_animal"
+                style="@style/editText_matchParent"
+                android:hint="@string/raza" />
+
+            <EditText
+                android:id="@+id/ET_etapa_productiva_animal"
+                style="@style/editText_matchParent"
+                android:hint="@string/etapa_productiva" />
+
+            <EditText
+                style="@style/editText_matchParent"
+                android:inputType="numberDecimal"
+                android:id="@+id/ET_peso_animal"
+                android:hint="@string/peso" />
+
+            <EditText
+                style="@style/editText_matchParent"
+                android:inputType="numberDecimal"
+                android:id="@+id/ET_edad_animal"
+                android:hint="@string/edad" />
+
+            <EditText
+                style="@style/editText_matchParent"
+                android:id="@+id/ET_dieta_animal"
+                android:hint="@string/dieta" />
+
+            <EditText
+                style="@style/editText_matchParent"
+                android:id="@+id/ET_proposito_animal"
+                android:hint="@string/proposito" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/sexo"
+                android:id="@+id/TV_sexo_animal"
+                style="@style/TextView_nomal" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/RG_sexos_animal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sexo_hembra"
+                    android:id="@+id/RB_sexo_hembra"
+                    android:checked="false"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sexo_macho"
+                    android:id="@+id/RB_sexo_macho"
+                    android:layout_margin="5dp" />
+            </RadioGroup>
+        </TableLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boton_agregar_animal"
+            android:id="@+id/BT_agregar_animal"
+            style="@style/button" />
+
+    </LinearLayout>
+
+</ScrollView>

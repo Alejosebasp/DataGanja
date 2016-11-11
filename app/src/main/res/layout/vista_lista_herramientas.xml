@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_nombre_herramienta_lista"
+        android:layout_gravity="center_horizontal"
+        style="@style/TextView_Lista" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_id_herramienta_lista"
+        android:layout_gravity="center_horizontal"
+        style="@style/TextView_Lista" />
+</LinearLayout>

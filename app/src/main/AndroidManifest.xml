@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alejosebasp.dataganja">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".vistas.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".vistas.AgregarFinca" />
+        <activity android:name=".vistas.Agregar_Animal" />
+        <activity android:name=".vistas.Vista_Finca" />
+        <activity android:name=".vistas.Inventario" />
+        <activity android:name=".vistas.Vista_Animales" />
+        <!--
+     ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".vistas.Vista_Herramientas" />
+        <activity android:name=".vistas.Vista_Insumos" />
+        <activity android:name=".vistas.Vista_Otros" />
+        <activity android:name=".vistas.Agregar_Herramienta" />
+        <activity android:name=".vistas.Agregar_Insumo" />
+        <activity android:name=".vistas.Agregar_Otro"></activity>
+    </application>
+
+</manifest>
