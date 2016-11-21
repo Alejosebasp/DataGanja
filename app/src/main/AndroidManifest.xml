@@ -33,7 +33,7 @@
         <activity android:name=".vistas.Vista_Otros" />
         <activity android:name=".vistas.Agregar_Herramienta" />
         <activity android:name=".vistas.Agregar_Insumo" />
-        <activity android:name=".vistas.Agregar_Otro"></activity>
+        <activity android:name=".vistas.Agregar_Otro" />
     </application>
 
 </manifest>
