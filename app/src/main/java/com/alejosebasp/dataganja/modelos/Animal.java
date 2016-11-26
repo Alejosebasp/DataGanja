@@ -6,21 +6,25 @@ package com.alejosebasp.dataganja.modelos;
 public class Animal {
 
     private double peso, edad;
-    private int id, _idFinca;
+    private int Id_Animal, Id_Finca;
     private String sexo, proposito, etapa_productiva, dieta, raza, especie;
 
-    public Animal(int _idFinca, double peso, double edad, int id, String sexo, String proposito,
+    public Animal(int Id_Finca, double peso, double edad, int id, String sexo, String proposito,
                   String etapa_productiva, String dieta, String raza, String especie) {
-        this._idFinca = _idFinca;
+        this.Id_Finca = Id_Finca;
         this.peso = peso;
         this.edad = edad;
-        this.id = id;
+        this.Id_Animal = id;
         this.sexo = sexo;
         this.proposito = proposito;
         this.etapa_productiva = etapa_productiva;
         this.dieta = dieta;
         this.raza = raza;
         this.especie = especie;
+    }
+
+    public Animal(int Id_Animal) {
+        this.Id_Animal = Id_Animal;
     }
 
     public double getPeso() {
@@ -32,11 +36,11 @@ public class Animal {
     }
 
     public int getId() {
-        return id;
+        return Id_Animal;
     }
 
-    public int get_idFinca() {
-        return _idFinca;
+    public int getId_Finca() {
+        return Id_Finca;
     }
 
     public String getSexo() {
@@ -65,7 +69,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Numero de animal: " + id +
+        return "Numero de animal: " + Id_Animal +
                 ", peso: " + peso +
                 ", edad: " + edad +
                 ", sexo: " + sexo +

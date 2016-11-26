@@ -68,8 +68,8 @@ public class BaseAdapterListaInsumos extends BaseAdapter {
         Insumo insumo = insumos.get(position);
         String cantidad = "Cantidad del insumo: " + insumo.getCantidad();
         String id = "Id: " + insumo.getId();
-        String tipoInsumo = "Tipo de insumo: " + insumo.getTipoDeInsumo();
-        String nombreInsumo = "Nombre del insumo: " + insumo.getNombreInsumo();
+        String tipoInsumo = "Tipo de insumo: " + insumo.getTipo_Insumo();
+        String nombreInsumo = "Nombre del insumo: " + insumo.getNombre_Insumo();
 
         viewHolder.TV_nombre_insumos_lista.setText(nombreInsumo);
         viewHolder.TV_tipo_insumo_lista.setText(tipoInsumo);

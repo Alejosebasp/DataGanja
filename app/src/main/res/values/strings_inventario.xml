@@ -8,7 +8,7 @@
     <string name="agregar_insumo">Agregar insumo</string>
     <string name="tipo_insumo">Tipo de insumo</string>
     <string name="nombre_insumo">Nombre del insumo</string>
-    <string name="cantidad">Cantidad</string>
+    <string name="Magnitud_Insumo">Cantidad</string>
     <string name="id_insumo">id o numero del insumo</string>
     <string name="id_otro">id o numero del articulo</string>
     <string name="nombre_otro">Nombre del articulo</string>

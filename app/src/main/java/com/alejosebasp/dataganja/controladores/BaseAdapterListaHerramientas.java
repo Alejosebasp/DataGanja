@@ -67,8 +67,8 @@ public class BaseAdapterListaHerramientas extends BaseAdapter {
 
         Herramienta herramienta = herramientas.get(position);
 
-        String nombre = "Nombre de la herramienta: " + herramienta.getNombre_herramienta();
-        String id = "Id: " + herramienta.getId_herramienta();
+        String nombre = "Nombre de la herramienta: " + herramienta.getNombre_Herramienta();
+        String id = "Id: " + herramienta.getId_Herramienta();
 
         viewHolder.TV_nombre_herramienta_lista.setText(nombre);
         viewHolder.TV_id_herramienta_lista.setText(id);

@@ -5,42 +5,87 @@ package com.alejosebasp.dataganja.modelos;
  */
 public class Insumo {
 
-    private String tipoDeInsumo;
-    private String nombreInsumo;
-    private String cantidad;
-    private int id, _idFinca;
+    private String Nombre_Insumo, Tipo_Insumo;
+    private String Magnitud_Insumo, Unidad_Medida_Insumo, Descripcion_Insumo;
+    private int Id_Insumo, Id_Finca;
 
-    public Insumo(int _idFinca, String tipoDeInsumo, String nombreInsumo, String cantidad, int id) {
-        this.tipoDeInsumo = tipoDeInsumo;
-        this.nombreInsumo = nombreInsumo;
-        this.cantidad = cantidad;
-        this.id = id;
-        this._idFinca = _idFinca;
+    public Insumo(String nombre_Insumo, String tipo_Insumo, String magnitud_Insumo,
+                  String unidad_Medida_Insumo, String descripcion_Insumo, int id_Insumo, int id_Finca) {
+        Nombre_Insumo = nombre_Insumo;
+        Tipo_Insumo = tipo_Insumo;
+        Magnitud_Insumo = magnitud_Insumo;
+        Unidad_Medida_Insumo = unidad_Medida_Insumo;
+        Descripcion_Insumo = descripcion_Insumo;
+        Id_Insumo = id_Insumo;
+        Id_Finca = id_Finca;
     }
 
-    public String getTipoDeInsumo() {
-        return tipoDeInsumo;
+    public String getNombre_Insumo() {
+        return Nombre_Insumo;
     }
 
-    public String getNombreInsumo() {
-        return nombreInsumo;
+    public void setNombre_Insumo(String nombre_Insumo) {
+        Nombre_Insumo = nombre_Insumo;
     }
 
-    public String getCantidad() {
-        return cantidad;
+    public String getTipo_Insumo() {
+        return Tipo_Insumo;
     }
 
-    /**
-     * @return retorna el ID del insumo.
-     */
-    public int getId() {
-        return id;
+    public void setTipo_Insumo(String tipo_Insumo) {
+        Tipo_Insumo = tipo_Insumo;
     }
 
-    /**
-     * @return retorna el ID de la finca a la que pertenece.
-     */
-    public int getIdFinca() {
-        return _idFinca;
+    public String getMagnitud_Insumo() {
+        return Magnitud_Insumo;
+    }
+
+    public void setMagnitud_Insumo(String magnitud_Insumo) {
+        Magnitud_Insumo = magnitud_Insumo;
+    }
+
+    public String getUnidad_Medida_Insumo() {
+        return Unidad_Medida_Insumo;
+    }
+
+    public void setUnidad_Medida_Insumo(String unidad_Medida_Insumo) {
+        Unidad_Medida_Insumo = unidad_Medida_Insumo;
+    }
+
+    public String getDescripcion_Insumo() {
+        return Descripcion_Insumo;
+    }
+
+    public void setDescripcion_Insumo(String descripcion_Insumo) {
+        Descripcion_Insumo = descripcion_Insumo;
+    }
+
+    public int getId_Insumo() {
+        return Id_Insumo;
+    }
+
+    public void setId_Insumo(int id_Insumo) {
+        Id_Insumo = id_Insumo;
+    }
+
+    public int getId_Finca() {
+        return Id_Finca;
+    }
+
+    public void setId_Finca(int id_Finca) {
+        Id_Finca = id_Finca;
+    }
+
+    @Override
+    public String toString() {
+        return "Insumo{" +
+                "Nombre_Insumo='" + Nombre_Insumo + '\'' +
+                ", Tipo_Insumo='" + Tipo_Insumo + '\'' +
+                ", Magnitud_Insumo='" + Magnitud_Insumo + '\'' +
+                ", Unidad_Medida_Insumo='" + Unidad_Medida_Insumo + '\'' +
+                ", Descripcion_Insumo='" + Descripcion_Insumo + '\'' +
+                ", Id_Insumo=" + Id_Insumo +
+                ", Id_Finca=" + Id_Finca +
+                '}';
     }
 }

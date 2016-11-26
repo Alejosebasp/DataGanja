@@ -21,6 +21,10 @@ public class Cultivo {
         Fecha_Recoleccion = fecha_Recoleccion;
     }
 
+    public Cultivo(int id_Cultivo) {
+        Id_Cultivo = id_Cultivo;
+    }
+
     public int getId_Cultivo() {
         return Id_Cultivo;
     }

@@ -2,7 +2,6 @@ package com.alejosebasp.dataganja.vistas;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -91,7 +90,7 @@ public class Vista_Animales extends Activity {
         }
         else {
             for (Animal animal: adminBaseDatos.listarAnimales()){
-                if (animal.get_idFinca() == _idFinca){
+                if (animal.getId_Finca() == _idFinca){
                     lista.add(animal);
                 }
             }
