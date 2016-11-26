@@ -11,6 +11,7 @@ import com.alejosebasp.dataganja.modelos.Insumo;
 import com.alejosebasp.dataganja.modelos.Otro;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by alejandrosebastian on 28/05/2016.
@@ -144,7 +145,7 @@ public class AdminBaseDatos {
         Cursor cursor = database.rawQuery("SELECT * FROM DBherramientas", null);
 
         while (cursor.moveToNext()){
-            herramienta = new Herramienta(cursor.getInt(1), cursor.getString(2), cursor.getInt(3));
+            herramienta = new Herramienta(cursor.getInt(1), cursor.getInt(2));
             herramientas.add(herramienta);
         }
         cursor.close();

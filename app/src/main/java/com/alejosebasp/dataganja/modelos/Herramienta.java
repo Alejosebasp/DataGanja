@@ -19,6 +19,11 @@ public class Herramienta {
         Id_Finca = id_Finca;
     }
 
+    public Herramienta(int id_Herramienta, int id_Finca) {
+        Id_Herramienta = id_Herramienta;
+        Id_Finca = id_Finca;
+    }
+
     public String getNombre_Herramienta() {
         return Nombre_Herramienta;
     }
