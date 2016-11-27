@@ -176,8 +176,8 @@ public class AdminBaseDatos {
         Cursor cursor = database.rawQuery("SELECT * FROM DBinsumos", null);
 
         while (cursor.moveToNext()){
-            insumo = new Insumo(cursor.getInt(1), cursor.getString(2), cursor.getString(3),
-                    cursor.getString(4), cursor.getInt(5));
+            insumo = new Insumo(cursor.getString(1), cursor.getString(2), cursor.getString(3),
+                    cursor.getString(4), cursor.getString(5), cursor.getInt(6), cursor.getInt(7));
             insumos.add(insumo);
         }
         cursor.close();

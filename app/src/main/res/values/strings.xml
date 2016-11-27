@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">DataGranja</string>
-    <string name="seleccionMain">Por favor seleccione una finca para empezar.</string>
+    <string name="seleccionMain">Por favor seleccione una finca.</string>
     <string name="aceptar">Aceptar</string>
     <string name="añadir_finca">Agregar finca</string>
     <string name="vista_ingresos">INGRESOS</string>
