@@ -1,6 +1,8 @@
 package com.alejosebasp.dataganja.vistas;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,14 +17,15 @@ import com.alejosebasp.dataganja.modelos.Finca;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity{
 
-    private Button BT_agregar_finca;
+
     private ListView LV_lista_fincas;
 
     private AdminBaseDatos adminBaseDatos;
     private ArrayList<Finca> fincas;
     private BaseAdapterListaFincas adapter;
+    private FloatingActionButton FAB_AgregarFinca_Main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adminBaseDatos = new AdminBaseDatos(this);
         listarFincas();
 
-        BT_agregar_finca = (Button)findViewById(R.id.BT_agregarFinca_main);
         LV_lista_fincas = (ListView)findViewById(R.id.LV_lista_fincas);
+        FAB_AgregarFinca_Main = (FloatingActionButton)findViewById(R.id.FAB_AgregarFinca_Main);
 
         if (fincas.isEmpty()){
             lanzarAgregarFinca();
@@ -63,7 +66,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }).start();
             }
         });
-        BT_agregar_finca.setOnClickListener(this);
+
+        FAB_AgregarFinca_Main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lanzarAgregarFinca();
+            }
+        });
     }
 
     public void updateLista(final BaseAdapterListaFincas adapter){
@@ -94,19 +103,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    @Override
-    public void onClick(View v) {
 
-        switch (v.getId()){
-
-            case R.id.BT_agregarFinca_main:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        lanzarAgregarFinca();
-                    }
-                }).start();
-                break;
-        }
-    }
 }

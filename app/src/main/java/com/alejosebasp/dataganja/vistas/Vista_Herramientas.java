@@ -18,7 +18,7 @@ import com.alejosebasp.dataganja.modelos.Insumo;
 import java.util.ArrayList;
 
 public class Vista_Herramientas extends Activity {
-
+/*
     private Button BT_agregar_herramienta_vista;
     private ListView LV_herramientas_vista;
 
@@ -92,5 +92,5 @@ public class Vista_Herramientas extends Activity {
         Intent intent = new Intent(this, Agregar_Herramienta.class);
         intent.putExtra("_idFinca", _idFinca);
         startActivity(intent);
-    }
+    }*/
 }

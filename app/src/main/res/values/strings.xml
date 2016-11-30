@@ -10,5 +10,6 @@
     <string name="fecha">Fecha:</string>
     <string name="descripcion">Descripción</string>
     <string name="valor">Valor</string>
+    <string name="title_activity_prueba">prueba</string>
 
 </resources>

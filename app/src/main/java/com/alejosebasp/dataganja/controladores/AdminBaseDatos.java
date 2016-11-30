@@ -3,15 +3,27 @@ package com.alejosebasp.dataganja.controladores;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.alejosebasp.dataganja.modelos.Animal;
 import com.alejosebasp.dataganja.modelos.Finca;
 import com.alejosebasp.dataganja.modelos.Herramienta;
 import com.alejosebasp.dataganja.modelos.Insumo;
 import com.alejosebasp.dataganja.modelos.Otro;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by alejandrosebastian on 28/05/2016.

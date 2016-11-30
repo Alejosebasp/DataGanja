@@ -12,6 +12,12 @@
         android:orientation="vertical"
         style="@style/AppTheme">
 
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"></android.support.v7.widget.Toolbar>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -21,7 +27,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nombre_finca"
                 android:id="@+id/TV_nombre_finca_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"

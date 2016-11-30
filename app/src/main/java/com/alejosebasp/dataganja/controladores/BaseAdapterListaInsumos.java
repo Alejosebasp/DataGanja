@@ -15,8 +15,8 @@ import java.util.ArrayList;
 /**
  * Created by alejandrosebastian on 29/05/2016.
  */
-public class BaseAdapterListaInsumos extends BaseAdapter {
-
+public class BaseAdapterListaInsumos { //extends BaseAdapter {
+/*
     private Context context;
     private ArrayList<Insumo> insumos;
 
@@ -81,5 +81,5 @@ public class BaseAdapterListaInsumos extends BaseAdapter {
 
     public void setInsumos(ArrayList<Insumo> insumos) {
         this.insumos = insumos;
-    }
+    }*/
 }
