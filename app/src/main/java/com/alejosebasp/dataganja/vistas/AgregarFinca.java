@@ -75,23 +75,6 @@ public class AgregarFinca extends AppCompatActivity {
                 tipoProduccion = "Pecuario";
             }
         }
-        /*
-        RG_tipo_produccion.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.RB_tipo_agricola){
-                    tipoProduccion = "Agricola";
-                }
-                else if (checkedId == R.id.RB_tipo_agropecuario){
-                    tipoProduccion = "Agropecuario";
-                }
-                else if (checkedId == R.id.RB_tipo_pecuario){
-                    tipoProduccion = "Pecuario";
-                }
-                else tipoProduccion = " ";
-            }
-        });*/
 
         //Obtencion de todos los datos de la finca
         if (ET_nombre_propietario.getText().toString().length() == 0){
@@ -136,7 +119,6 @@ public class AgregarFinca extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
-
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.alejosebasp.dataganja.vistas;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class Vista_Finca extends AppCompatActivity {
     private TextView TV_ubicacion_vista;
     private TextView TV_trabajadores_vista;
     private Button BT_ver_inventario;
+    private FloatingActionButton FAB_Editar_Vista_Finca;
 
     private RequestQueue requestQueue;
     private Singleton singleton;
@@ -53,9 +55,10 @@ public class Vista_Finca extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         singleton = Singleton.getInstance(getApplicationContext());
+        FAB_Editar_Vista_Finca = (FloatingActionButton)findViewById(R.id.FAB_Editar_Vista_Finca);
 
         Bundle extras = getIntent().getExtras();
-        final int _idFinca = extras.getInt("_id");
+        final int Id_Finca = extras.getInt("_id");
 
         adminBaseDatos = new AdminBaseDatos(this);
         fincas = adminBaseDatos.listarFincas();
@@ -68,106 +71,77 @@ public class Vista_Finca extends AppCompatActivity {
         TV_tipo_produccion = (TextView)findViewById(R.id.TV_tipo_produccion_vista);
         BT_ver_inventario = (Button)findViewById(R.id.BT_ver_inventario);
 
-        cargarDatos(_idFinca);
+        //llama a la funcion que realiza el request
+        cargarDatos(Id_Finca);
+
+        FAB_Editar_Vista_Finca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lanzarAgregarFinca(Id_Finca);
+            }
+        });
 
         BT_ver_inventario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lanzarInventario(_idFinca);
+                lanzarInventario(Id_Finca);
             }
         });
+    }
+
+    private void lanzarAgregarFinca(final int Id_Finca) {
+        Intent intent = new Intent(this, AgregarFinca.class);
+        intent.putExtra("_Id", Id_Finca);
+        startActivity(intent);
 
     }
 
     public void cargarDatos(final int _id){
 
-        new Thread(new Runnable() {
+        StringRequest request = new StringRequest(Request.Method.POST, ListarURL, new Response.Listener<String>() {
+
             @Override
-            public void run() {
+            public void onResponse(String response) {
+                Log.v("Result", response);
 
-                StringRequest request = new StringRequest(Request.Method.POST, ListarURL, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.v("Result", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray fincas = jsonObject.getJSONArray("fincas");
 
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            JSONArray fincas = jsonObject.getJSONArray("fincas");
+                    for (int i = 0; i<fincas.length(); i++){
 
-                            for (int i = 0; i<fincas.length(); i++){
+                        JSONObject finca = fincas.getJSONObject(i);
 
-                                JSONObject finca = fincas.getJSONObject(i);
+                        final int Id_Finca = finca.getInt("IDFINCA");
+                        final String nombre_finca = finca.getString("NOMBRE_FINCA");
+                        final String tamaño = finca.getString("TAMANO_HTS_");
+                        final String Ubicacion = finca.getString("UBICACION_FINCA");
+                        final String Tipo_Produccion = finca.getString("TIPO_PRODUCCION");
+                        final String Saldo = finca.getString("SALDO_FINCA");
 
-                                final int Id_Finca = finca.getInt("Id_Finca");
-                                final String nombre_finca = finca.getString("Nombre_Finca");
-                                final String tamaño = finca.getString("Tamano_HTS_");
-                                final String Ubicacion = finca.getString("Ubicacion_finca");
-                                final String Tipo_Produccion = finca.getString("Tipo_Prodcuccion");
-                                final String Saldo = finca.getString("Saldo_Finca");
-
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-
-                                        TV_nombre_finca_vista.setText(String.valueOf(Id_Finca) + " " + nombre_finca +
-                                        " " + tamaño + " " + Ubicacion + " " + Tipo_Produccion + " " +
-                                        Tipo_Produccion + " " + Saldo + "\n");
-                                    }
-                                });
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+                        //coloca el resultado de la consulta en un TextView
+                        TV_nombre_finca_vista.setText(String.valueOf(Id_Finca) + " " + nombre_finca +
+                        " " + tamaño + " " + Ubicacion + " " + Tipo_Produccion + " " +
+                        Tipo_Produccion + " " + Saldo + "\n");
 
                     }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
 
-                    }
-                });
-
-
-
-                /*for (Finca f: fincas){
-                    if (f.getId() == _id) {
-                        datos = new String[6];
-                        final String nombre_finca = "Nombre de la finca: " + f.getNombre_finca();
-                        final String nombre_propietario = "Propietario: " + f.getNombre_propietario();
-                        final String tamaño = "Tamaño: " + f.getTamaño() + " hectareas";
-                        final String ubicacion = "Ubicada en: " + f.getUbicacion();
-                        final String trabajadores = "Numero de trabajadores: " + f.getNumero_trabajadores();
-                        final String tipo_produccion = "Tipo de producción: " + f.getTipoProduccion();
-
-                        datos[0] = nombre_finca;
-                        datos[1] = nombre_propietario;
-                        datos[2] = tamaño;
-                        datos[3] = ubicacion;
-                        datos[4] = trabajadores;
-                        datos[5] = tipo_produccion;
-
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                TV_nombre_finca_vista.setText(datos[0]);
-                                TV_propietario_vista.setText(datos[1]);
-                                TV_tamaño_vista.setText(datos[2]);
-                                TV_ubicacion_vista.setText(datos[3]);
-                                TV_trabajadores_vista.setText(datos[4]);
-                                TV_tipo_produccion.setText(datos[5]);
-                            }
-                        });
-                    }
-                }*/
+                } catch (JSONException e) {
+                    Log.e("ERROR JSON", e.getMessage(), e);
+                }
             }
-        }).start();
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("ERROR", error.getMessage(), error);
+            }
+        });
+        requestQueue.add(request);
     }
 
-    public void lanzarInventario(final int _idFinca){
+    public void lanzarInventario(final int Id_Finca){
         Intent intencion = new Intent(this, Inventario.class);
-        intencion.putExtra("_id", _idFinca);
+        intencion.putExtra("_id", Id_Finca);
         startActivity(intencion);
     }
 }

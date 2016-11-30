@@ -14,6 +14,7 @@
         android:id="@+id/TB_main"
         android:theme="@style/Widget.AppCompat.Toolbar"
         android:clickable="false">
+
     </android.support.v7.widget.Toolbar>
 
     <TextView
