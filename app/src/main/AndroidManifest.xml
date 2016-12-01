@@ -39,7 +39,8 @@
             android:label="@string/title_activity_prueba"
             android:theme="@style/AppTheme" />
         <activity android:name=".vistas.Vista_Ingresos" />
-        <activity android:name=".vistas.Vista_Egreso"></activity>
+        <activity android:name=".vistas.Vista_Egreso" />
+        <activity android:name=".vistas.Vista_Productos"></activity>
     </application>
 
 </manifest>

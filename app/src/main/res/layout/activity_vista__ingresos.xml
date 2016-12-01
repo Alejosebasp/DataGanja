@@ -33,7 +33,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/TV_Ingresos" />
+        android:layout_below="@+id/TV_Ingresos"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarSize="12dp"
+        android:cacheColorHint="@android:color/transparent"/>
 
 
 

@@ -26,7 +26,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/LV_herramientas_vista"
         android:layout_weight="1"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarSize="12dp"
+        android:cacheColorHint="@android:color/transparent"/>
 
     <Button
         android:layout_width="wrap_content"

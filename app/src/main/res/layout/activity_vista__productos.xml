@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_vista__productos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.alejosebasp.dataganja.vistas.Vista_Insumos"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context="com.alejosebasp.dataganja.vistas.Vista_Productos"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -14,17 +15,17 @@
         android:elevation="4dp"></android.support.v7.widget.Toolbar>
 
     <TextView
+        android:text="PRODUCTOS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INSUMOS"
-        android:id="@+id/TV_insumos"
+        android:id="@+id/TV_Productos"
         style="@style/TextView_Titulos"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LV_insumos_vista"
+        android:id="@+id/LV_productos_vista"
         android:layout_weight="1"
         android:layout_margin="10dp"
         android:scrollbarStyle="outsideOverlay"
@@ -32,10 +33,11 @@
         android:cacheColorHint="@android:color/transparent"/>
 
     <Button
+        android:text="Añadir Productos"
         android:layout_width="wrap_content"
+        style="@style/button"
         android:layout_height="wrap_content"
-        android:text="@string/agregar_insumo"
-        android:id="@+id/BT_agregar_insumo_vista"
-        style="@style/button"/>
+        android:id="@+id/button3" />
+
 
 </LinearLayout>

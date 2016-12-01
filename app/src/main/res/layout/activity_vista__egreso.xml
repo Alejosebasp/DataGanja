@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_vista__egreso"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.alejosebasp.dataganja.vistas.Vista_Egreso"
-    android:background="@color/background">
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
+    android:background="@color/background"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -19,4 +14,29 @@
         android:background="@color/colorPrimary"
         android:elevation="4dp"></android.support.v7.widget.Toolbar>
 
-</RelativeLayout>
+    <TextView
+        android:text="EGRESOS"
+        style="@style/TextView_Titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_Egreso"
+        android:layout_below="@+id/toolbar2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LV_egresos_vista"
+        android:layout_weight="1"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:text="Agregar Egresos"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4" />
+
+
+</LinearLayout>
