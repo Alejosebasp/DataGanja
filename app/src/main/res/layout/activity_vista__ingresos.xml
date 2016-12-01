@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_vista__ingresos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.alejosebasp.dataganja.vistas.Vista_Ingresos"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:id="@+id/toolbar2"></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:text="INGRESOS"
+        style="@style/TextView_Titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/TV_Ingresos"
+        android:layout_below="@+id/toolbar2"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LV_ingresos_vista"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/TV_Ingresos" />
+
+
+
+    <Button
+        android:text="Agregar ingreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        style="@style/button"
+        android:layout_below="@+id/TV_Ingresos"
+        android:layout_alignStart="@+id/TV_Ingresos"
+        android:layout_marginTop="441dp" />
+
+</LinearLayout>

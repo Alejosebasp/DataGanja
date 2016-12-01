@@ -14,8 +14,8 @@ import com.alejosebasp.dataganja.controladores.AdminBaseDatos;
 
 public class Agregar_Animal extends Activity {
 
-    private EditText ET_id_animal, ET_especie_animal, ET_raza_animal, ET_etapa_productiva_animal;
-    private EditText ET_peso_animal, ET_edad_animal, ET_dieta_animal, ET_proposito_animal;
+    private EditText ET_id_animal, ET_especie_animal, ET_raza_animal;
+    private EditText ET_peso_animal, ET_edad_animal, ET_dieta_animal;
     private RadioGroup RG_sexos_animal;
     private Button BT_agregar_animal;
 
@@ -40,10 +40,8 @@ public class Agregar_Animal extends Activity {
         ET_id_animal = (EditText)findViewById(R.id.ET_id_animal);
         ET_especie_animal = (EditText)findViewById(R.id.ET_especie_animal);
         ET_raza_animal = (EditText)findViewById(R.id.ET_raza_animal);
-        ET_etapa_productiva_animal = (EditText)findViewById(R.id.ET_etapa_productiva_animal);
         ET_peso_animal = (EditText)findViewById(R.id.ET_peso_animal);
         ET_edad_animal = (EditText)findViewById(R.id.ET_edad_animal);
-        ET_proposito_animal = (EditText)findViewById(R.id.ET_proposito_animal);
         RG_sexos_animal = (RadioGroup)findViewById(R.id.RG_sexos_animal);
         BT_agregar_animal = (Button)findViewById(R.id.BT_agregar_animal);
 
@@ -110,16 +108,6 @@ public class Agregar_Animal extends Activity {
             raza = " ";
         }
         else { raza = ET_raza_animal.getText().toString();}
-
-        if (ET_etapa_productiva_animal.getText().toString().length() == 0){
-            etapa_productiva = " ";
-        }
-        else { etapa_productiva = ET_etapa_productiva_animal.getText().toString();}
-
-        if (ET_proposito_animal.getText().toString().length() == 0){
-            proposito = " ";
-        }
-        else { proposito = ET_proposito_animal.getText().toString();}
 
         if (condicion1 && condicion2){
 

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".vistas.Agregar_Insumo"
     android:background="@color/background">
 
@@ -11,6 +10,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"></android.support.v7.widget.Toolbar>
 
         <EditText
             android:layout_height="wrap_content"
@@ -41,6 +46,22 @@
             android:layout_gravity="center_horizontal"
             style="@style/editText_matchParent"
             android:hint="@string/id_insumo" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unidad de medida de insumo"
+            android:id="@+id/ET_unidad_medida"
+            android:textColorHint="#ffffff" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Descripcion de insumo"
+            android:ems="10"
+            android:id="@+id/ET_descripcion_insumo"
+            android:textColorHint="#ffffff" />
 
         <Button
             android:layout_width="wrap_content"

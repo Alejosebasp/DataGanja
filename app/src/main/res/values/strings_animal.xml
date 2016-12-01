@@ -5,7 +5,7 @@
     <string name="id">Id o numero del animal</string>
     <string name="raza">Raza</string>
     <string name="especie">Especie</string>
-    <string name="peso">Peso</string>
+    <string name="peso">Peso(Kg)</string>
     <string name="edad">Edad(meses)</string>
     <string name="sexo">Sexo</string>
     <string name="sexo_macho">Macho</string>

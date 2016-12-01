@@ -3,14 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".vistas.Agregar_Insumo"
     android:background="@color/background">
+
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"></android.support.v7.widget.Toolbar>
 
         <EditText
             android:id="@+id/ET_nombre_herramienta"
@@ -25,7 +32,17 @@
             android:id="@+id/ET_id_herramienta"
             android:layout_gravity="center_horizontal"
             style="@style/editText_matchParent"
-            android:hint="@string/id_otro" />
+            android:hint="@string/id_otro"
+            android:textColor="@color/textIcons" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Fecha de adquisión"
+            android:ems="10"
+            android:id="@+id/ET_fecha_adqui"
+            android:textColor="@color/textIcons" />
 
         <Button
             android:layout_width="wrap_content"

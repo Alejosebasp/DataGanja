@@ -28,8 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nombre_finca"
                 android:id="@+id/TV_nombre_finca_vista"
-                style="@style/TextView_nomal"
-                android:textColor="@color/textIcons" />
+                style="@style/TextView_nomal"/>
 
             <TextView
                 android:layout_height="wrap_content"

@@ -32,4 +32,18 @@
         android:id="@+id/TV_id_insumos_lista"
         android:layout_gravity="center_horizontal" />
 
+    <TextView
+        style="@style/TextView_Lista"
+        android:text="New Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_Unidad_insumo" />
+
+    <TextView
+        style="@style/TextView_Lista"
+        android:text="New Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_Descripcion_insumo" />
+
 </LinearLayout>

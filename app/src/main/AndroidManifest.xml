@@ -32,14 +32,13 @@
 
         <activity android:name=".vistas.Vista_Herramientas" />
         <activity android:name=".vistas.Vista_Insumos" />
-        <activity android:name=".vistas.Vista_Otros" />
         <activity android:name=".vistas.Agregar_Herramienta" />
         <activity android:name=".vistas.Agregar_Insumo" />
-        <activity android:name=".vistas.Agregar_Otro" />
         <activity
             android:name=".vistas.prueba"
             android:label="@string/title_activity_prueba"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".vistas.Vista_Ingresos"></activity>
     </application>
 
 </manifest>

@@ -23,8 +23,9 @@
             android:layout_height="wrap_content"
             android:text="@string/titulo_finca"
             android:id="@+id/textView2"
-            style="@style/TextView_nomal"
-            android:gravity="center_horizontal" />
+            style="@style/TextView_Titulos"
+            android:gravity="center_horizontal"
+            android:textColor="@color/primaryText" />
 
         <EditText
             style="@style/editText_matchParent"
@@ -67,7 +68,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/tipo_produccion"
                 android:id="@+id/TV_tipo_produccion"
-                style="@style/TextView_Titulos" />
+                style="@style/TextView_Titulos"
+                android:textColor="@color/primaryText" />
 
         </TableLayout>
 
@@ -84,18 +86,20 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tipo_pecuario"
-                    android:id="@+id/RB_tipo_pecuario"
+                    android:text="@string/tipo_agricola"
+                    android:id="@+id/RB_tipo_agricola"
                     android:checked="false"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textIcons" />
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tipo_agricola"
-                    android:id="@+id/RB_tipo_agricola"
+                    android:text="@string/tipo_pecuario"
+                    android:id="@+id/RB_tipo_pecuario"
                     android:checked="false"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textIcons" />
 
                 <RadioButton
                     android:layout_width="match_parent"
@@ -103,7 +107,8 @@
                     android:text="@string/ripo_agropecuario"
                     android:id="@+id/RB_tipo_agropecuario"
                     android:checked="false"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:textColor="@color/textIcons" />
             </RadioGroup>
 
             <Button
