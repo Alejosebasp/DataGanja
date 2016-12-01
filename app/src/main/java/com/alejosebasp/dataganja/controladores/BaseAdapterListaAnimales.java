@@ -64,11 +64,9 @@ public class BaseAdapterListaAnimales extends BaseAdapter {
             viewHolder.TV_dieta_animales_lista = (TextView)convertView.findViewById(R.id.TV_dieta_animales_lista);
             viewHolder.TV_edad_animales_lista = (TextView)convertView.findViewById(R.id.TV_edad_animales_lista);
             viewHolder.TV_especie_animales_lista = (TextView)convertView.findViewById(R.id.TV_especie_animales_lista);
-            viewHolder.TV_etapaProductiva_animales_lista = (TextView)convertView.findViewById(R.id.TV_etapaProductiva_animales_lista);
             viewHolder.TV_id_animales_lista = (TextView)convertView.findViewById(R.id.TV_id_animales_lista);
             viewHolder.TV_peso_animales_lista = (TextView)convertView.findViewById(R.id.TV_peso_animales_lista);
             viewHolder.TV_raza_animales_lista = (TextView)convertView.findViewById(R.id.TV_raza_animales_lista);
-            viewHolder.TV_proposito_animales_lista = (TextView)convertView.findViewById(R.id.TV_proposito_animales_lista);
             viewHolder.TV_sexo_animales_lista = (TextView)convertView.findViewById(R.id.TV_sexo_animales_lista);
 
             convertView.setTag(viewHolder);

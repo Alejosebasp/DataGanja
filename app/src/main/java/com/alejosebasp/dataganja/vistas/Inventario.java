@@ -45,19 +45,8 @@ public class Inventario extends AppCompatActivity {
                 lanzarInsumos(_idFinca);
             }
         });
-        BT_otros_inventario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lanzarOtros(_idFinca);
-            }
-        });
 
-    }
 
-    private void lanzarOtros(int _idFinca) {
-        Intent intent = new Intent(this, Vista_Otros.class);
-        intent.putExtra("_idFinca", _idFinca);
-        startActivity(intent);
     }
 
     private void lanzarInsumos(int _idFinca) {

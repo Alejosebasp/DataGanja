@@ -17,4 +17,11 @@
         android:id="@+id/TV_id_herramienta_lista"
         android:layout_gravity="center_horizontal"
         style="@style/TextView_Lista" />
+
+    <TextView
+        android:text="New Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TV_Fecha_adquisicion"
+        style="@style/TextView_Lista" />
 </LinearLayout>

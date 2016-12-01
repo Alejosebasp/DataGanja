@@ -4,7 +4,7 @@
     <string name="Animales">Animales</string>
     <string name="materiales">Herramientas</string>
     <string name="insumos">Insumos</string>
-    <string name="otros">Otros</string>
+    <string name="maquinaria">Maquinaria</string>
     <string name="agregar_insumo">Agregar insumo</string>
     <string name="tipo_insumo">Tipo de insumo</string>
     <string name="nombre_insumo">Nombre del insumo</string>
