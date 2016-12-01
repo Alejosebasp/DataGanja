@@ -118,11 +118,11 @@ public class Vista_Finca extends AppCompatActivity {
                             //Comparar Id_Fincas con Id_Finca seleccionado
                             if (finca.getInt("Id_Finca") == Id_Finca){
 
-                                final String nombre_finca = finca.getString("Nombre_Finca");
-                                final String tamaño = finca.getString("Tamano_HTS_");
-                                final String Ubicacion = finca.getString("Ubicacion_Finca");
-                                final String Tipo_Produccion = finca.getString("Tipo_Produccion");
-                                final String Saldo = finca.getString("Saldo_Finca");
+                                final String nombre_finca = "Nombre de la finca: " + finca.getString("Nombre_Finca");
+                                final String tamaño = "Tamaño: " + finca.getString("Tamano_HTS_") + " hectareas";
+                                final String Ubicacion = "Ubicada en: " + finca.getString("Ubicacion_Finca");
+                                final String Tipo_Produccion = "Tipo de producción: " + finca.getString("Tipo_Produccion");
+                                final String Saldo = "Saldo Total: " + finca.getString("Saldo_Finca");
 
                                 //coloca los resultados en un TextView
                                 TV_nombre_finca_vista.setText(nombre_finca);

@@ -28,61 +28,67 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nombre_finca"
                 android:id="@+id/TV_nombre_finca_vista"
-                style="@style/TextView_nomal"/>
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:text="@string/propietario"
                 android:id="@+id/TV_propietario_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:text="@string/tamaño"
                 android:id="@+id/TV_tamaño_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:text="@string/ubicada_en"
                 android:id="@+id/TV_ubicacion_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:text="@string/numero_trabajadores"
                 android:id="@+id/TV_trabajadores_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:text="Tipo de producción"
                 android:id="@+id/TV_tipo_produccion_vista"
-                style="@style/TextView_nomal" />
+                style="@style/TextView_nomal"
+                android:textColor="@color/textIcons" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ver_inventario"
                 android:id="@+id/BT_ver_inventario"
-                android:layout_row="0"
                 android:layout_gravity="center_horizontal"
-                android:layout_column="0"
                 style="@style/button"
-                android:elevation="2dp" />
+                android:elevation="2dp"/>
 
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:layout_gravity="bottom|right"
+                android:layout_margin="10dp"
                 app:fabSize="normal"
                 app:srcCompat="@android:drawable/ic_menu_edit"
                 android:id="@+id/FAB_Editar_Vista_Finca"
@@ -91,7 +97,5 @@
                 />
 
         </LinearLayout>
-
-
     </LinearLayout>
 </ScrollView>
