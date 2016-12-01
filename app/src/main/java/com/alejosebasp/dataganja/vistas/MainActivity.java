@@ -84,8 +84,8 @@ public class MainActivity extends Activity{
                     @Override
                     public void run() {
                         Finca finca = Listafincas.get(position);
-                        int _id = finca.get_id();
-                        lanzarVistaFinca(_id);
+                        int Id_Finca = finca.get_id();
+                        lanzarVistaFinca(Id_Finca);
                     }
                 }).start();
             }
@@ -170,10 +170,10 @@ public class MainActivity extends Activity{
         startActivity(intencion);
     }
 
-    public void lanzarVistaFinca(int _id){
+    public void lanzarVistaFinca(int Id_Finca){
         Intent intent = new Intent(this, Vista_Finca.class);
-        intent.putExtra("_id", _id);
-        Log.v("Main", _id + "");
+        intent.putExtra("Id_Finca", Id_Finca);
+        Log.v("Main", Id_Finca + "");
         startActivity(intent);
     }
 }

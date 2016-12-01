@@ -49,8 +49,6 @@ public class Vista_Finca extends AppCompatActivity {
     private String ListarURL = Constants.IP + "App_ProFarm/ListarFinca.php";
 
     private AdminBaseDatos adminBaseDatos;
-    private ArrayList<Finca> fincas;
-    String[] datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +58,11 @@ public class Vista_Finca extends AppCompatActivity {
         FAB_Editar_Vista_Finca = (FloatingActionButton)findViewById(R.id.FAB_Editar_Vista_Finca);
 
         Bundle extras = getIntent().getExtras();
-        final int Id_Finca = extras.getInt("_id");
+        final int Id_Finca = extras.getInt("Id_Finca");
 
         Log.v("Vista", Id_Finca + "");
 
         adminBaseDatos = new AdminBaseDatos(this);
-        fincas = adminBaseDatos.listarFincas();
 
         TV_nombre_finca_vista = (TextView)findViewById(R.id.TV_nombre_finca_vista);
         TV_propietario_vista = (TextView)findViewById(R.id.TV_propietario_vista);
@@ -75,8 +72,7 @@ public class Vista_Finca extends AppCompatActivity {
         TV_tipo_produccion = (TextView)findViewById(R.id.TV_tipo_produccion_vista);
         BT_ver_inventario = (Button)findViewById(R.id.BT_ver_inventario);
 
-        //llama a la funcion que realiza el request
-
+        //llama a la funcion que realiza el request y carga los datos en los TV
         cargarDatos(Id_Finca);
 
         FAB_Editar_Vista_Finca.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +97,7 @@ public class Vista_Finca extends AppCompatActivity {
 
     }
 
-    public void cargarDatos(final int _id){
+    public void cargarDatos(final int Id_Finca){
 
         StringRequest request = new StringRequest(Request.Method.POST, ListarURL, new Response.Listener<String>() {
 
@@ -117,21 +113,25 @@ public class Vista_Finca extends AppCompatActivity {
                         JSONArray fincas = jsonObject.getJSONArray("fincas");
 
                         for (int i = 0; i<fincas.length(); i++){
-
                             JSONObject finca = fincas.getJSONObject(i);
 
-                            final int Id_Finca = finca.getInt("Id_Finca");
-                            final String nombre_finca = finca.getString("Nombre_Finca");
-                            final String tamaño = finca.getString("Tamano_HTS_");
-                            final String Ubicacion = finca.getString("Ubicacion_Finca");
-                            final String Tipo_Produccion = finca.getString("Tipo_Produccion");
-                            final String Saldo = finca.getString("Saldo_Finca");
+                            //Comparar Id_Fincas con Id_Finca seleccionado
+                            if (finca.getInt("Id_Finca") == Id_Finca){
 
-                            //coloca el resultado de la consulta en un TextView
-                            TV_nombre_finca_vista.setText(String.valueOf(Id_Finca) + " " + nombre_finca +
-                                    " " + tamaño + " " + Ubicacion + " " + Tipo_Produccion + " " +
-                                    Tipo_Produccion + " " + Saldo + "\n");
+                                final String nombre_finca = finca.getString("Nombre_Finca");
+                                final String tamaño = finca.getString("Tamano_HTS_");
+                                final String Ubicacion = finca.getString("Ubicacion_Finca");
+                                final String Tipo_Produccion = finca.getString("Tipo_Produccion");
+                                final String Saldo = finca.getString("Saldo_Finca");
 
+                                //coloca los resultados en un TextView
+                                TV_nombre_finca_vista.setText(nombre_finca);
+                                TV_propietario_vista.setText(tamaño);
+                                TV_tamaño_vista.setText(Ubicacion);
+                                TV_ubicacion_vista.setText(Tipo_Produccion);
+                                TV_tipo_produccion.setText(Tipo_Produccion);
+                                TV_trabajadores_vista.setText(Saldo);
+                            }
                             Log.v("finca_log", finca.toString());
                         }
                     }
@@ -142,7 +142,7 @@ public class Vista_Finca extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("ERROR", error.getMessage(), error);
+                Log.e("ERROR ErrorListener", error.getMessage(), error);
             }
         }){
             @Override
