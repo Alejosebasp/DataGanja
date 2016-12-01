@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -100,6 +101,7 @@ public class MainActivity extends Activity{
     public void lanzarVistaFinca(int _id){
         Intent intent = new Intent(this, Vista_Finca.class);
         intent.putExtra("_id", _id);
+        Log.v("Main", _id + "");
         startActivity(intent);
     }
 

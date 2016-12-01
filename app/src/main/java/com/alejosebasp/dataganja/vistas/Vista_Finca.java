@@ -15,9 +15,13 @@ import com.alejosebasp.dataganja.R;
 import com.alejosebasp.dataganja.controladores.AdminBaseDatos;
 import com.alejosebasp.dataganja.controladores.Singleton;
 import com.alejosebasp.dataganja.modelos.Finca;
+import com.alejosebasp.dataganja.util.Constants;
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
@@ -29,6 +33,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Vista_Finca extends AppCompatActivity {
 
@@ -42,7 +48,7 @@ public class Vista_Finca extends AppCompatActivity {
 
     private RequestQueue requestQueue;
     private Singleton singleton;
-    private String ListarURL = "http://192.168.0.6/App_ProFarm/ListarFinca.php";
+    private String ListarURL = Constants.IP + "App_ProFarm/ListarFinca.php";
 
     private AdminBaseDatos adminBaseDatos;
     private ArrayList<Finca> fincas;
@@ -53,12 +59,12 @@ public class Vista_Finca extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista__finca);
 
-        requestQueue = Volley.newRequestQueue(getApplicationContext());
-        singleton = Singleton.getInstance(getApplicationContext());
         FAB_Editar_Vista_Finca = (FloatingActionButton)findViewById(R.id.FAB_Editar_Vista_Finca);
 
         Bundle extras = getIntent().getExtras();
         final int Id_Finca = extras.getInt("_id");
+
+        Log.v("Vista", Id_Finca + "");
 
         adminBaseDatos = new AdminBaseDatos(this);
         fincas = adminBaseDatos.listarFincas();
@@ -72,6 +78,7 @@ public class Vista_Finca extends AppCompatActivity {
         BT_ver_inventario = (Button)findViewById(R.id.BT_ver_inventario);
 
         //llama a la funcion que realiza el request
+
         cargarDatos(Id_Finca);
 
         FAB_Editar_Vista_Finca.setOnClickListener(new View.OnClickListener() {
@@ -106,26 +113,30 @@ public class Vista_Finca extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray fincas = jsonObject.getJSONArray("fincas");
+                    String result = jsonObject.getString("result");
 
-                    for (int i = 0; i<fincas.length(); i++){
+                    if (result.equals("DONE")){
+                        JSONArray fincas = jsonObject.getJSONArray("fincas");
 
-                        JSONObject finca = fincas.getJSONObject(i);
+                        for (int i = 0; i<fincas.length(); i++){
 
-                        final int Id_Finca = finca.getInt("IDFINCA");
-                        final String nombre_finca = finca.getString("NOMBRE_FINCA");
-                        final String tamaño = finca.getString("TAMANO_HTS_");
-                        final String Ubicacion = finca.getString("UBICACION_FINCA");
-                        final String Tipo_Produccion = finca.getString("TIPO_PRODUCCION");
-                        final String Saldo = finca.getString("SALDO_FINCA");
+                            JSONObject finca = fincas.getJSONObject(i);
 
-                        //coloca el resultado de la consulta en un TextView
-                        TV_nombre_finca_vista.setText(String.valueOf(Id_Finca) + " " + nombre_finca +
-                        " " + tamaño + " " + Ubicacion + " " + Tipo_Produccion + " " +
-                        Tipo_Produccion + " " + Saldo + "\n");
+                            final int Id_Finca = finca.getInt("Id_Finca");
+                            final String nombre_finca = finca.getString("Nombre_Finca");
+                            final String tamaño = finca.getString("Tamano_HTS_");
+                            final String Ubicacion = finca.getString("Ubicacion_Finca");
+                            final String Tipo_Produccion = finca.getString("Tipo_Produccion");
+                            final String Saldo = finca.getString("Saldo_Finca");
 
+                            //coloca el resultado de la consulta en un TextView
+                            TV_nombre_finca_vista.setText(String.valueOf(Id_Finca) + " " + nombre_finca +
+                                    " " + tamaño + " " + Ubicacion + " " + Tipo_Produccion + " " +
+                                    Tipo_Produccion + " " + Saldo + "\n");
+
+                            Log.v("finca_log", finca.toString());
+                        }
                     }
-
                 } catch (JSONException e) {
                     Log.e("ERROR JSON", e.getMessage(), e);
                 }
@@ -135,8 +146,19 @@ public class Vista_Finca extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e("ERROR", error.getMessage(), error);
             }
-        });
-        requestQueue.add(request);
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("ID_FINCA", "1");
+                return params;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                2000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        Singleton.getInstance(Vista_Finca.this).addToRequestQueue(request);
     }
 
     public void lanzarInventario(final int Id_Finca){
