@@ -57,13 +57,13 @@ public class MainActivity extends Activity{
         FAB_AgregarFinca_Main = (FloatingActionButton)findViewById(R.id.FAB_AgregarFinca_Main);
 
 
-       if (g == 0) {
+       /*if (g == 0) {
             if (Listafincas.isEmpty()) {
                 lanzarAgregarFinca();
                 g++;
             }
-        }
-        else {
+        }*/
+        //else {
 
             adapter = new BaseAdapterListaFincas(getBaseContext(), Listafincas);
 
@@ -75,7 +75,7 @@ public class MainActivity extends Activity{
             }).start();
             updateLista(adapter);
            //g=0;
-        }
+        //}
 
         LV_lista_fincas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
