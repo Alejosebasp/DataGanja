@@ -46,8 +46,6 @@ public class Vista_Finca extends AppCompatActivity {
     private Button BT_ver_inventario;
     private FloatingActionButton FAB_Editar_Vista_Finca;
 
-    private RequestQueue requestQueue;
-    private Singleton singleton;
     private String ListarURL = Constants.IP + "App_ProFarm/ListarFinca.php";
 
     private AdminBaseDatos adminBaseDatos;
