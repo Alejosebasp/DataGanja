@@ -10,8 +10,12 @@ import com.alejosebasp.dataganja.modelos.Finca;
 import com.alejosebasp.dataganja.modelos.Herramienta;
 import com.alejosebasp.dataganja.modelos.Insumo;
 import com.alejosebasp.dataganja.modelos.Otro;
+import com.alejosebasp.dataganja.util.Constants;
+import com.alejosebasp.dataganja.vistas.MainActivity;
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
@@ -58,21 +62,7 @@ public class AdminBaseDatos {
 
     public ArrayList<Finca> listarFincas(){
 
-        ArrayList<Finca> fincas = new ArrayList<>();
-
-        SQLiteDatabase database = db_finca.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT _id, NombrePropietario, NombreFinca, TamañoFinca, " +
-                "NumeroTrabajadores, Ubicacion, TipoProduccion FROM DBfincas", null);
-
-        while (cursor.moveToNext()){
-            finca = new Finca(cursor.getInt(0),cursor.getString(1), cursor.getString(2), cursor.getDouble(3), cursor.getInt(4),
-                    cursor.getString(5), cursor.getString(6));
-            fincas.add(finca);
-        }
-        cursor.close();
-        database.close();
-
-        return fincas;
+        return null;
     }
 
     public void guardarAnimal(int _idFinca, double peso, double edad, int id, String sexo, String proposito,

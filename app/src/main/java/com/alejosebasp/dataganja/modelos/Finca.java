@@ -5,47 +5,79 @@ package com.alejosebasp.dataganja.modelos;
  */
 public class Finca {
 
-    private String nombre_propietario,nombre_finca;
+    private Double saldo;
+    private String nombre_finca;
     private double tamaño;
-    private int numero_trabajadores, _id;
+    private int _id;
     private String ubicacion, tipoProduccion;
 
-    public Finca(int _id ,String nombre_propietario, String nombre_finca, double tamaño,
-                 int numero_trabajadores, String ubicacion, String tipoProduccion) {
+    public Finca(int _id, double tamaño, String nombre_finca,
+                  String ubicacion, String tipoProduccion, Double SaldoFinca) {
         this._id = _id;
-        this.nombre_propietario = nombre_propietario;
         this.nombre_finca = nombre_finca;
         this.tamaño = tamaño;
-        this.numero_trabajadores = numero_trabajadores;
+        this.saldo = SaldoFinca;
         this.ubicacion = ubicacion;
         this.tipoProduccion = tipoProduccion;
     }
 
-    public String getTipoProduccion() {
-        return tipoProduccion;
+    public Double getSaldo() {
+        return saldo;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public int getNumero_trabajadores() {
-        return numero_trabajadores;
-    }
-
-    public double getTamaño() {
-        return tamaño;
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
     }
 
     public String getNombre_finca() {
         return nombre_finca;
     }
 
-    public String getNombre_propietario() {
-        return nombre_propietario;
+    public void setNombre_finca(String nombre_finca) {
+        this.nombre_finca = nombre_finca;
     }
 
-    public int getId() {
+    public double getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(double tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public int get_id() {
         return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getTipoProduccion() {
+        return tipoProduccion;
+    }
+
+    public void setTipoProduccion(String tipoProduccion) {
+        this.tipoProduccion = tipoProduccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Finca{" +
+                "saldo=" + saldo +
+                ", nombre_finca='" + nombre_finca + '\'' +
+                ", tamaño=" + tamaño +
+                ", _id=" + _id +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", tipoProduccion='" + tipoProduccion + '\'' +
+                '}';
     }
 }

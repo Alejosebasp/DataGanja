@@ -5,5 +5,5 @@ package com.alejosebasp.dataganja.util;
  */
 
 public class Constants {
-    public static final String IP = "http://192.168.43.179/";
+    public static final String IP = "http://10.203.186.127/";
 }

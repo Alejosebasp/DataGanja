@@ -66,11 +66,11 @@ public class BaseAdapterListaFincas extends BaseAdapter{
 
         Finca finca = fincas.get(position);
         String nombre_finca = "Nombre finca: "+finca.getNombre_finca();
-        String nombre_propietario = "Nombre propietario: " + finca.getNombre_propietario();
+        String Tipo_Produccion = "Tipo Produccion: " + finca.getTipoProduccion();
         String ubicacion = "Ubicacion: " + finca.getUbicacion();
 
         viewHolder.TV_nombre_finca.setText(nombre_finca);
-        viewHolder.TV_nombre_propietario.setText(nombre_propietario);
+        viewHolder.TV_nombre_propietario.setText(Tipo_Produccion);
         viewHolder.TV_ubicacion.setText(ubicacion);
 
         return convertView;
