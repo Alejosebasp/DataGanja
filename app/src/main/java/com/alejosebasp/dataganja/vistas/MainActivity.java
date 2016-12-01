@@ -56,38 +56,25 @@ public class MainActivity extends Activity{
         LV_lista_fincas = (ListView)findViewById(R.id.LV_lista_fincas);
         FAB_AgregarFinca_Main = (FloatingActionButton)findViewById(R.id.FAB_AgregarFinca_Main);
 
+        adapter = new BaseAdapterListaFincas(getBaseContext(), Listafincas);
 
-       /*if (g == 0) {
-            if (Listafincas.isEmpty()) {
-                lanzarAgregarFinca();
-                g++;
-            }
-        }*/
-        //else {
-
-            adapter = new BaseAdapterListaFincas(getBaseContext(), Listafincas);
-
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    LV_lista_fincas.setAdapter(adapter);
-                }
-            }).start();
+        if (Listafincas.size() > 0) {
+            lanzarAgregarFinca();
             updateLista(adapter);
-           //g=0;
-        //}
+            g++;
+        }
+        else {
+            LV_lista_fincas.setAdapter(adapter);
+            updateLista(adapter);
+        }
 
         LV_lista_fincas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Finca finca = Listafincas.get(position);
-                        int Id_Finca = finca.get_id();
-                        lanzarVistaFinca(Id_Finca);
-                    }
-                }).start();
+
+                Finca finca = Listafincas.get(position);
+                int Id_Finca = finca.get_id();
+                lanzarVistaFinca(Id_Finca);
             }
         });
 

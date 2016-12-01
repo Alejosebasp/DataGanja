@@ -151,13 +151,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/maquinaria"
                     android:id="@+id/BT_otros_inventario"
                     android:layout_column="1"
                     android:layout_weight="1"
                     android:background="#3399FF"
                     android:textColor="#ffffff"
-                    android:layout_margin="2dp" />
+                    android:layout_margin="2dp"
+                    android:text="@string/maquinaria"/>
 
             </TableRow>
         </TableLayout>
